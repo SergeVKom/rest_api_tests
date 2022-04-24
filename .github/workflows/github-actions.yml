@@ -33,3 +33,12 @@ jobs:
 
       - name: Run Integration Tests
         run: mvn -B test
+
+      - name: Test Report
+        uses: phoenix-actions/test-reporting@v6
+        id: test-report
+        if: success() || failure()
+        with:
+          name: JUnit5 Tests
+          path: target/surefire-reports/*.xml
+          reporter: java-junit
