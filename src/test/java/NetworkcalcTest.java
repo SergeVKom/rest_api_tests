@@ -36,7 +36,7 @@ public class NetworkcalcTest {
         );
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "#{index} - Convert number {2} from {0} to {1}")
     @MethodSource("testData")
     void positiveTest(String fromBase, String toBase, String originalNumber, String convertedNumber) {
         Response expectedResponse = new Response()

@@ -39,6 +39,6 @@ jobs:
         id: test-report
         if: success() || failure()
         with:
-          name: JUnit5 Tests
+          name: Integration Tests Report
           path: target/surefire-reports/*.xml
           reporter: java-junit

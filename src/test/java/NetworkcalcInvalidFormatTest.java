@@ -1,6 +1,7 @@
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -24,7 +25,7 @@ public class NetworkcalcInvalidFormatTest {
         );
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "#{index} - Use invalid number {2} for base {0}")
     @MethodSource("invalidNumber")
     void invalidDataTest(String fromBase, String toBase, String originalNumber) {
         ErrorResponse expectedResponse = new ErrorResponse()
@@ -51,7 +52,7 @@ public class NetworkcalcInvalidFormatTest {
         );
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "#{index} - Use {2}")
     @MethodSource("invalidBase")
     void invalidBaseTest(String fromBase, String toBase, String errorMessage) {
         ErrorResponse expectedResponse = new ErrorResponse()
