@@ -25,7 +25,7 @@ public class NetworkcalcTest {
                 Arguments.of("8", "8", "12", "12"),
                 Arguments.of("8", "10", "12", "10"),
                 Arguments.of("8", "16", "12", "a"),
-                Arguments.of("10", "2", "1010", "10"),
+                Arguments.of("10", "2", "10", "1010"),
                 Arguments.of("10", "8", "10", "12"),
                 Arguments.of("10", "10", "10", "10"),
                 Arguments.of("10", "16", "10", "a"),
