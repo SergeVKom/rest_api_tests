@@ -34,11 +34,6 @@ jobs:
       - name: Run Integration Tests
         run: mvn -B test
 
-      - name: Test Report
-        uses: phoenix-actions/test-reporting@v6
-        id: test-report
-        if: success() || failure()
-        with:
-          name: Integration Tests Report
-          path: target/surefire-reports/*.xml
-          reporter: java-junit
+      - name: Publish Test Report
+        if: ${{ always() }}
+        uses: scacap/action-surefire-report@v1
